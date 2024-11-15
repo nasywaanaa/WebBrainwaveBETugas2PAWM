@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Brainwave - Discover</title>
+        
+        <link rel="stylesheet" href="style.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navigation_bar">
+                <div class="brainwave_logo">
+                    <img src="assets/images/Logo Brainwave.svg" alt="Brainwave_Logo">
+                </div>
+
+                <div class="search_bar">
+                    <input type="text" placeholder="Search ...">
+                    <button class="search_icon">
+                        <img src="assets/icons/Search.svg" alt="Search">
+                    </button>
+                </div>
+
+                <div class="appearance_mode">
+                    <button class="light_mode">
+                        <img src="assets/icons/Light Mode.svg">
+                    </button>
+                    <button class="dark_mode">
+                        <img src="assets/icons/Dark Mode.svg">
+                    </button>
+                </div>
+
+                <div class="more_icons">
+                    <button class="cart_icon">
+                        <img src="assets/icons/Cart.svg" alt="Cart">
+                    </button>
+
+                    <button class="notification_icon">
+                        <img src="assets/icons/Notification.svg" alt="Notification">
+                    </button>
+
+                    <button class="setting_icon">
+                        <img src="assets/icons/setting.svg" alt="Setting">
+                    </button>
+                </div>
+
+                <div class="user_info">
+                    <img src="assets/icons/User Profile.svg" alt="User Profile" class="user_image">
+                    <div class="user_details">
+                        <div class="user_name_badge">
+                            <span id="username">Loading...</span>
+                            <button onclick="window.location.href='profile.html'" class="edit-profile-button">Edit Profile</button>
+                            <div class="user_badge">
+                                <img src="assets/icons/Verified.svg" alt="Verified" class="verified_icon">
+                                <div class="user_role">Student</div>
+                            </div>
+                        </div>
+                        <span class="user_status">Online</span>
+                    </div>
+                    <button class="dropdown_button">
+                        <i class="arrow_down"></i>
+                    </button>
+                </div>                                       
+            </nav>
+        </header>
+
+        <div class="main_layout">
+            <aside class="sidebar">
+                <div class="sidebar_menu">MENU</div>
+                <ul class="menu">
+                    <li><a href="index.html" class="menu-item discover active">
+                        <img src="assets/icons/Discover Icon Click.png" alt="Discover Icon" class="menu-icon"> Discover
+                    </a></li>
+                    <li><a href="computational.html" class="menu-item course">
+                        <img src="assets/icons/Course Icon.png" alt="Course Icon" class="menu-icon"> Course
+                    </a></li>
+                    <li><a href="tracker.html" class="menu-item tracker">
+                        <img src="assets/icons/Tracker Icon.png" alt="Tracker Icon" class="menu-icon"> Tracker
+                    </a></li>
+                    <li><a href="evaluation.html" class="menu-item evaluation">
+                        <img src="assets/icons/Evaluation Icon.png" alt="Evaluation Icon" class="menu-icon"> Evaluation & Report
+                    </a></li>
+                </ul>
+
+                <hr class="hr-divider">
+        
+                <div class="sidebar_general">GENERAL</div>
+                <ul class="general-menu">
+                    <li><a href="faq.html" class="menu-item faq">
+                        <img src="assets/icons/FAQ Icon.png" alt="FAQ Icon" class="menu-icon"> FAQ
+                    </a></li>
+                    <li><a href="tutorial.html" class="menu-item tutorial">
+                        <img src="assets/icons/Tutorial Icon.png" alt="Tutorial Icon" class="menu-icon"> Tutorial
+                    </a></li>
+                    <li><a href="profile.html" class="menu-item tutorial">
+                        <img src="assets/icons/Tutorial Icon.png" alt="Tutorial Icon" class="menu-icon"> Edit Profile
+                    </a></li>
+                    <li><a href="quiz_tracker.html" class="menu-item tutorial">
+                        <img src="assets/icons/Tutorial Icon.png" alt="Tutorial Icon" class="menu-icon"> Quiz Tracker
+                    </a></li>
+                </ul>
+            </aside>
+        </div>        
+
+        <div class="discover_heading">
+            <h1>Discover</h1>
+        </div>
+
+
+        <main>
+            <div class="discover_main">
+                <div class="slider">
+                    <div class="slide active">
+                        <div class="content">
+                            <h4>LOREM IPSUM</h4>
+                            <h1>Lorem ipsum dolor sit amet consectetur. Dictum.</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur. Laoreet leo tellus nulla cras risus eget nec donec. Vel diam sem blandit. Tincidunt a proin con.</p>
+                            <div class="course-info">
+                                <img src="assets/icons/Computational.svg" alt="Computational">
+                                <div>
+                                    <h5>Computational</h5>
+                                    <p>120K views &bull; 1 weeks ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-student">
+                    <h3>Best Student</h3>
+                    <ul>
+                        <li>
+                            <span class="student-rank">01</span>
+                            <img src="assets/icons/User Profile.svg" alt="Nasywaa Anggun" class="student-img">
+                            <div class="student-details">
+                                <span class="student-name">Nasywaa Anggun</span>
+                                <span class="student-income">121 Moduls</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="student-rank">02</span>
+                            <img src="assets/icons/User Profile.svg" alt="Raesa Anggun" class="student-img">
+                            <div class="student-details">
+                                <span class="student-name">Raesa Anggun</span>
+                                <span class="student-income">112 Moduls</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="student-rank">03</span>
+                            <img src="assets/icons/User Profile.svg" alt="Asto Guntoro" class="student-img">
+                            <div class="student-details">
+                                <span class="student-name">Asto Guntoro</span>
+                                <span class="student-income">98 Moduls</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="student-rank">04</span>
+                            <img src="assets/icons/User Profile.svg" alt="Gema Wahyuni" class="student-img">
+                            <div class="student-details">
+                                <span class="student-name">Gema Wahyuni</span>
+                                <span class="student-income">97 Moduls</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="student-rank">05</span>
+                            <img src="assets/icons/User Profile.svg" alt="Shavina Alya" class="student-img">
+                            <div class="student-details">
+                                <span class="student-name">Shavina Alya</span>
+                                <span class="student-income">91 Moduls</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </main>   
+        
+        <div class="subject_heading">
+            <h1>Subject Study Moduls</h1>
+        </div>
+
+        <main>
+            <div class="subject_study_moduls">
+                <div class="subject_heading">
+                    <div class="tabs">
+                        <span class="active">Top Subject</span>
+                        <span>New Moduls</span>
+                        <span>Saved Moduls</span>
+                        <span>Trending</span>
+                    </div>
+                </div>
+                
+                <div class="subjects_grid">
+                    <div class="subject_card">
+                        <li><a href="computational.html" class="menu-item faq">
+                            <img src="assets/icons/Computer.svg" alt="Mathematics" class="subject_img">
+                        </a></li>
+                        <div class="subject_details">
+                            <h3>Computational</h3>
+                            <p>6 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 12 Hours 1 Minute</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Physics" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Physics</h3>
+                            <p>6 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 21 Days</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Chemistry" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Chemistry</h3>
+                            <p>9 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 1 Day</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Chemistry" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Mathematics</h3>
+                            <p>8 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 5 Hours 2 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Mathematics" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Computational</h3>
+                            <p>6 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 12 Hours 1 Minute</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Physics" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Physics</h3>
+                            <p>6 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 21 Days</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Chemistry" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Chemistry</h3>
+                            <p>9 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 1 Day</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject_card">
+                        <img src="assets/icons/Computer.svg" alt="Chemistry" class="subject_img">
+                        <div class="subject_details">
+                            <h3>Mathematics</h3>
+                            <p>8 Moduls</p>
+                            <div class="study_info">
+                                <img src="assets/icons/Study Time.svg" alt="Study Time Icon">
+                                <span>Study Time: 5 Hours 2 Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="site_footer">
+            <div class="footer_content">
+                <div class="footer_logo_section">
+                    <div class="footer_logo">BRAINWAVE</div>
+                    <div class="footer_slogan">Learning for Tomorrow</div>
+                </div>
+
+                <div class="footer_links">
+                    <div class="footer_column">
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">QnA</a></li>
+                            <li><a href="#">Resource</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_column">
+                        <ul>
+                            <li><a href="#">More Questions</a></li>
+                            <li><a href="#">Online Library</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_column">
+                        <ul>
+                            <li><a href="#">Chatbot</a></li>
+                            <li><a href="#">Discussion Forum</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_column">
+                        <ul>
+                            <li><a href="#">Feedbacks</a></li>
+                            <li><a href="#">Suggestion</a></li>
+                            <li><a href="#">Error Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <hr class="footer_divider">
+    
+            <div class="footer_social_copyright">
+                <div class="footer_social">
+                    <a href="https://nasywaanaa.medium.com/"><i class="fab fa-medium"></i></a>
+                    <a href="https://x.com/naslifecycle"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/nasywaanaa"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/nasywaa-anggun-athiefah-987b72262/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nasywaanaa"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="footer_copyright">
+                    &copy; 2024 BRAINWAVE. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        <script>
+            async function loadUserInfo() {
+                const token = localStorage.getItem("token");
+                console.log("Token:", token); // Debugging: check if the token is correctly defined
+
+                if (!token) {
+                    alert("You are not logged in!");
+                    window.location.href = "/login.html";
+                    return;
+                }
+
+                const response = await fetch("http://localhost:8080/user-info", {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                console.log("Response:", response); // Debugging: check the response status
+
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById("username").textContent = data.username;
+                } else {
+                    alert("Failed to load user info. Please log in again.");
+                    localStorage.removeItem("token");
+                    window.location.href = "/login.html";
+                }
+            }
+
+            loadUserInfo();
+        </script>
+        
+    </body>
+</html>
