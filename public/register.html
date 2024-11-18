@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainwave - Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="register">
+    <div class="register-container">
+        <div class="register-logo">
+            <img src="assets/images/Brainwave.svg" alt="Brainwave Logo">
+        </div>
+        <h2 class="register-title">Register for Brainwave</h2>
+        <form class="register-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <p class="register-footer">Or register with Google</p>
+        <a href="/auth/google" class="google-oauth-button">Register with Google</a>
+        <p class="register-footer">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+    <script>
+        document.querySelector(".register-form").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            const response = await fetch("http://localhost:8080/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name: username, email, password }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+            alert("Registration successful! Redirecting to login...");
+            window.location.href = "/login.html"; // Redirect ke login.html
+            } else {
+            alert(data.message || "Registration failed");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to register. Please try again later.");
+        }
+        });
+
+    </script>
+</body>
+</html>

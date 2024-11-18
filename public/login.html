@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainwave - Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Adjust path as needed -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="login">
+    <div class="login-container">
+        <div class="login-logo">
+            <img src="assets/images/Brainwave.svg" alt="Brainwave Logo">
+        </div>
+        <h2 class="login-title">Login to Brainwave</h2>
+        
+        <!-- Login form with email and password fields -->
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        
+        <p class="register-footer">Or login with Google</p>
+
+        <a href="/auth/google" class="google-oauth-button">Login with Google</a>
+        
+        <p class="login-footer">Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const response = await fetch("http://localhost:8080/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem("token", data.token);
+                    alert("Login successful!");
+                    window.location.href = "/index.html";
+                } else {
+                    alert(data.message || "Login failed");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to login. Please try again later.");
+            }
+        });
+    </script>
+</body>
+</html>

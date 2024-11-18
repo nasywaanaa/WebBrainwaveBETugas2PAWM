@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Edit Profile - Brainwave</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="editprofile">
+  <div class="edit-profile-container">
+    <h1>Edit Profile</h1>
+    <form id="editProfileForm">
+      <label for="newUsername">New Username:</label>
+      <input type="text" id="newUsername" name="newUsername" required />
+      <span id="usernameFeedback" class="feedback"></span>
+      <button type="submit">Save Changes</button>
+    </form>
+    <button onclick="goBack()" class="back-button">Back</button>
+  </div>
+
+  <script>
+    // Function to go back to index.html
+    function goBack() {
+      window.location.href = "index.html";
+    }
+
+    // Function to check username availability
+    async function checkUsernameAvailability(username) {
+      try {
+        const response = await fetch(`http://localhost:8080/check-username?username=${username}`);
+        if (response.ok) {
+          const data = await response.json();
+          return data.available;
+        } else {
+          throw new Error("Failed to check username availability.");
+        }
+      } catch (error) {
+        console.error("Error checking username:", error);
+        return false;
+      }
+    }
+
+    // Form submission event handler
+    document.getElementById("editProfileForm").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const newUsername = document.getElementById("newUsername").value.trim();
+      const feedbackElement = document.getElementById("usernameFeedback");
+
+      try {
+        const isAvailable = await checkUsernameAvailability(newUsername);
+        if (isAvailable) {
+          feedbackElement.textContent = "Username is available. Saving changes...";
+          feedbackElement.style.color = "green";
+
+          const token = localStorage.getItem("token");
+
+          const response = await fetch("http://localhost:8080/update-username", {
+            method: "PUT",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ newUsername })
+          });
+
+          if (response.ok) {
+            alert("Username updated successfully!");
+            window.location.href = "index.html";
+          } else {
+            feedbackElement.textContent = "Failed to update username.";
+            feedbackElement.style.color = "red";
+          }
+        } else {
+          feedbackElement.textContent = "Username is already taken.";
+          feedbackElement.style.color = "red";
+        }
+      } catch (error) {
+        console.error("Error updating username:", error);
+        feedbackElement.textContent = "An error occurred. Please try again later.";
+        feedbackElement.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
